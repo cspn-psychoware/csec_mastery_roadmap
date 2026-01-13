@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Mastery Roadmap</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 900px;
+            width: 100%;
+            padding: 50px;
+        }
+        
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        
+        .info-box {
+            background: #f8f9ff;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+        
+        .info-box h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .info-box p {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .download-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.1em;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            font-weight: 600;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+        }
+        
+        .download-btn:active {
+            transform: translateY(0);
+        }
+        
+        .preview-btn {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+            padding: 18px 40px;
+            font-size: 1.1em;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .preview-btn:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .feature-icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .feature h4 {
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+        
+        .feature p {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            color: #667eea;
+            margin-top: 20px;
+        }
+        
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .preview-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .preview-content {
+            background: white;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            color: #666;
+            background: none;
+            border: none;
+        }
+
+        .close-btn:hover {
+            color: #000;
+        }
+
+        .preview-content h2 {
+            color: #667eea;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .preview-content h3 {
+            color: #764ba2;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .preview-content ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .preview-content li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🛡️ Cybersecurity Mastery Roadmap</h1>
+        <p class="subtitle">Complete Guide to Becoming an Expert Security Professional</p>
+        
+        <div class="info-box">
+            <h3>📋 What's Inside</h3>
+            <p>This comprehensive roadmap contains a detailed, step-by-step guide covering every aspect of cybersecurity from foundational concepts to advanced specializations. Each phase includes specific tasks, tools to master, resources to study, and practical exercises to complete.</p>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">📚</div>
+                <h4>8 Major Phases</h4>
+                <p>From foundations to advanced topics</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🎯</div>
+                <h4>Actionable Tasks</h4>
+                <p>Specific steps for each skill</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🛠️</div>
+                <h4>Tools & Resources</h4>
+                <p>Everything you need to practice</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">⏱️</div>
+                <h4>Time Estimates</h4>
+                <p>Realistic timeframes for mastery</p>
+            </div>
+        </div>
+        
+        <div class="btn-container">
+            <button class="preview-btn" onclick="showPreview()">📖 Preview Content</button>
+            <button class="download-btn" onclick="generatePDF()">⬇️ Download PDF</button>
+        </div>
+        
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Generating your roadmap PDF...</p>
+        </div>
+    </div>
+
+    <div class="preview-modal" id="previewModal">
+        <div class="preview-content">
+            <button class="close-btn" onclick="closePreview()">&times;</button>
+            <h1>Cybersecurity Mastery Roadmap - Preview</h1>
+            
+            <h2>Phase 1: Foundation Building (3-6 Months)</h2>
+            <h3>Networking Fundamentals</h3>
+            <ul>
+                <li>Study OSI model and TCP/IP stack in depth</li>
+                <li>Master subnetting, CIDR notation, and IP addressing</li>
+                <li>Learn routing protocols (OSPF, BGP, RIP)</li>
+                <li>Practice with Wireshark - capture and analyze packets</li>
+            </ul>
+            
+            <h3>Linux Mastery</h3>
+            <ul>
+                <li>Install multiple Linux distributions (Kali, Ubuntu, CentOS)</li>
+                <li>Master bash scripting and command-line tools</li>
+                <li>Learn system administration and service management</li>
+                <li>Understand file permissions, users, and groups</li>
+            </ul>
+
+            <h2>Phase 2: Programming for Security (2-4 Months)</h2>
+            <ul>
+                <li>Master Python for security automation</li>
+                <li>Learn to write network scanners and exploit scripts</li>
+                <li>Study common vulnerabilities in code</li>
+                <li>Practice on coding challenge platforms</li>
+            </ul>
+
+            <p style="margin-top: 30px; color: #666; font-style: italic;">...and much more! Download the full PDF for the complete roadmap with all 8 phases, detailed tasks, resources, and timelines.</p>
+        </div>
+    </div>
+
+    <script>
+        function showPreview() {
+            document.getElementById('previewModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePreview() {
+            document.getElementById('previewModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        async function generatePDF() {
+            const loading = document.getElementById('loading');
+            loading.style.display = 'block';
+            
+            await new Promise(resolve => setTimeout(resolve, 100));
+            
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            let yPos = 20;
+            const pageHeight = doc.internal.pageSize.height;
+            const margin = 20;
+            const lineHeight = 7;
+            const maxWidth = 170;
+            
+            function checkPageBreak(neededSpace = 10) {
+                if (yPos + neededSpace > pageHeight - margin) {
+                    doc.addPage();
+                    yPos = 20;
+                    return true;
+                }
+                return false;
+            }
+            
+            function addText(text, fontSize, isBold = false, color = [0, 0, 0]) {
+                doc.setFontSize(fontSize);
+                doc.setFont(undefined, isBold ? 'bold' : 'normal');
+                doc.setTextColor(...color);
+                const lines = doc.splitTextToSize(text, maxWidth);
+                
+                checkPageBreak(lines.length * lineHeight);
+                
+                doc.text(lines, margin, yPos);
+                yPos += lines.length * lineHeight;
+            }
+            
+            function addBullet(text, indent = 0) {
+                checkPageBreak();
+                doc.setFontSize(10);
+                doc.setFont(undefined, 'normal');
+                const bulletX = margin + indent;
+                const textX = bulletX + 5;
+                doc.text('•', bulletX, yPos);
+                const lines = doc.splitTextToSize(text, maxWidth - indent - 5);
+                doc.text(lines, textX, yPos);
+                yPos += lines.length * lineHeight;
+            }
+            
+            // Title Page
+            doc.setFontSize(24);
+            doc.setFont(undefined, 'bold');
+            doc.setTextColor(102, 126, 234);
+            doc.text('CYBERSECURITY MASTERY ROADMAP', margin, yPos);
+            yPos += 15;
+            
+            doc.setFontSize(12);
+            doc.setFont(undefined, 'normal');
+            doc.setTextColor(100, 100, 100);
+            doc.text('Complete Guide to Becoming an Expert Security Professional', margin, yPos);
+            yPos += 20;
+            
+            doc.setDrawColor(102, 126, 234);
+            doc.line(margin, yPos, 190, yPos);
+            yPos += 15;
+            
+            // Introduction
+            addText('INTRODUCTION', 14, true, [102, 126, 234]);
+            yPos += 5;
+            addText('This roadmap is designed for individuals who want to achieve true mastery in cybersecurity. It focuses on building deep, practical skills rather than just passing certifications. Each phase builds upon the previous one, and hands-on practice is emphasized throughout.', 10);
+            yPos += 10;
+            
+            // Phase 1
+            doc.addPage();
+            yPos = 20;
+            addText('PHASE 1: FOUNDATION BUILDING (3-6 MONTHS)', 16, true, [102, 126, 234]);
+            yPos += 5;
+            
+            addText('1.1 NETWORKING FUNDAMENTALS', 12, true);
+            yPos += 3;
+            
+            addText('Core Concepts to Master:', 10, true);
+            yPos += 2;
+            addBullet('OSI Model: Study all 7 layers in depth - Physical, Data Link, Network, Transport, Session, Presentation, Application. Understand what happens at each layer and how they interact.');
+            addBullet('TCP/IP Stack: Master the 4-layer model, understand how it maps to OSI, learn the differences between connection-oriented and connectionless protocols.');
+            addBullet('IP Addressing: Master IPv4 and IPv6, understand subnetting, CIDR notation, subnet masks, network and broadcast addresses. Practice subnetting calculations by hand.');
+            addBullet('Routing: Learn how routers make forwarding decisions, study routing tables, understand static vs dynamic routing, learn protocols like OSPF, BGP, and RIP.');
+            addBullet('Switching: Understand MAC addresses, ARP protocol, VLANs, spanning tree protocol, and layer 2 vs layer 3 switching.');
+            yPos += 3;
+            
+            addText('Protocols to Study in Detail:', 10, true);
+            yPos += 2;
+            addBullet('HTTP/HTTPS: Request methods, status codes, headers, cookies, sessions, SSL/TLS handshake process.');
+            addBullet('DNS: Query types, record types (A, AAAA, MX, TXT, NS, CNAME), zone transfers, DNSSEC.');
+            addBullet('SMTP/POP3/IMAP: Email transmission, authentication mechanisms, common attacks.');
+            addBullet('FTP/SFTP/SSH: File transfer protocols, secure alternatives, key-based authentication.');
+            addBullet('DHCP: IP address assignment, DORA process, DHCP options, lease management.');
+            yPos += 3;
+            
+            addText('Practical Tasks:', 10, true);
+            yPos += 2;
+            addBullet('Set up a home lab using VirtualBox or VMware with multiple networked VMs.');
+            addBullet('Configure routers and switches (use GNS3 or Packet Tracer for simulation).');
+            addBullet('Install and master Wireshark - capture traffic during common activities (web browsing, file downloads, SSH sessions) and analyze every packet.');
+            addBullet('Practice packet crafting with Scapy - create custom packets to understand protocol structure.');
+            addBullet('Set up a network with multiple subnets, configure routing between them, implement VLANs.');
+            addBullet('Perform network scans with Nmap and understand what each packet does (TCP SYN scan, UDP scan, etc.).');
+            yPos += 5;
+            
+            checkPageBreak(30);
+            addText('1.2 LINUX SYSTEM MASTERY', 12, true);
+            yPos += 3;
+            
+            addText('Essential Linux Skills:', 10, true);
+            yPos += 2;
+            addBullet('File System: Understand the Linux directory structure (/etc, /var, /usr, /home, /tmp, /dev, /proc), file permissions (read, write, execute), ownership, special permissions (SUID, SGID, sticky bit).');
+            addBullet('Command Line: Master essential commands - ls, cd, cp, mv, rm, chmod, chown, ps, top, netstat, ss, grep, awk, sed, find, locate.');
+            addBullet('Text Editors: Become proficient with vim or nano for quick file editing.');
+            addBullet('Process Management: Learn about foreground/background processes, signals (SIGTERM, SIGKILL), job control, systemd/init systems.');
+            addBullet('Package Management: Master apt (Debian/Ubuntu), yum/dnf (RedHat/CentOS), and understand how to install from source.');
+            addBullet('User Management: Create users and groups, manage sudo privileges, understand /etc/passwd and /etc/shadow files.');
+            yPos += 3;
+            
+            addText('Bash Scripting:', 10, true);
+            yPos += 2;
+            addBullet('Learn bash syntax: variables, loops (for, while), conditionals (if/else), functions, arrays.');
+            addBullet('Write scripts for automation: log analysis, backup scripts, system monitoring, user management.');
+            addBullet('Understand input/output redirection, pipes, and command substitution.');
+            addBullet('Master regular expressions for pattern matching in grep, sed, and awk.');
+            yPos += 3;
+            
+            addText('System Administration:', 10, true);
+            yPos += 2;
+            addBullet('Service Management: Start, stop, restart services using systemctl, understand service dependencies.');
+            addBullet('Log Analysis: Learn to read system logs (/var/log/), understand syslog, configure log rotation.');
+            addBullet('Network Configuration: Configure static IPs, manage network interfaces, troubleshoot connectivity issues.');
+            addBullet('Firewall Management: Master iptables or nftables, understand chains, rules, and policies.');
+            yPos += 3;
+            
+            addText('Practical Tasks:', 10, true);
+            yPos += 2;
+            addBullet('Install and configure Kali Linux, Ubuntu Server, and CentOS in your home lab.');
+            addBullet('Write a bash script that monitors system resources and alerts when thresholds are exceeded.');
+            addBullet('Set up SSH key-based authentication, disable password login, configure fail2ban.');
+            addBullet('Create a script that automates user creation with proper permissions and home directories.');
+            addBullet('Configure a firewall to allow only specific services and block all other traffic.');
+            addBullet('Set up a cron job to perform automated backups and log rotation.');
+            
+            // Phase 2
+            doc.addPage();
+            yPos = 20;
+            addText('PHASE 2: PROGRAMMING FOR SECURITY (2-4 MONTHS)', 16, true, [102, 126, 234]);
+            yPos += 5;
+            
+            addText('2.1 PYTHON MASTERY', 12, true);
+            yPos += 3;
+            
+            addText('Core Python Concepts:', 10, true);
+            yPos += 2;
+            addBullet('Data Types & Structures: Master lists, tuples, dictionaries, sets, understand when to use each.');
+            addBullet('Control Flow: Loops, conditionals, exception handling, context managers.');
+            addBullet('Functions: Regular functions, lambda functions, decorators, generators, *args and **kwargs.');
+            addBullet('Object-Oriented Programming: Classes, inheritance, polymorphism, encapsulation.');
+            addBullet('File I/O: Reading/writing files, working with JSON, CSV, and binary files.');
+            yPos += 3;
+            
+            addText('Essential Libraries for Security:', 10, true);
+            yPos += 2;
+            addBullet('socket: Create TCP/UDP clients and servers, understand network programming.');
+            addBullet('requests: Make HTTP requests, handle responses, work with APIs.');
+            addBullet('scapy: Packet manipulation, create custom packets, network scanning.');
+            addBullet('paramiko: SSH automation, execute commands on remote systems.');
+            addBullet('beautifulsoup4: Web scraping, HTML parsing.');
+            addBullet('subprocess: Execute system commands, capture output.');
+            addBullet('re: Regular expressions for pattern matching.');
+            addBullet('hashlib: Cryptographic hashing functions.');
+            addBullet('cryptography: Encryption and decryption operations.');
+            yPos += 3;
+            
+            addText('Security-Focused Projects:', 10, true);
+            yPos += 2;
+            addBullet('Port Scanner: Write a multi-threaded port scanner that detects open ports and identifies services.');
+            addBullet('Password Cracker: Implement dictionary and brute-force password attacks against hashed passwords.');
+            addBullet('Network Sniffer: Create a packet sniffer that captures and analyzes network traffic.');
+            addBullet('Web Scraper: Build a tool that extracts information from websites, handles authentication.');
+            addBullet('Keylogger: Develop a basic keylogger (for educational purposes in your own lab environment).');
+            addBullet('Reverse Shell: Implement a basic reverse shell for understanding post-exploitation.');
+            addBullet('Log Parser: Write a script that parses web server logs and identifies suspicious patterns.');
+            yPos += 3;
+            
+            checkPageBreak(30);
+            addText('2.2 ADDITIONAL PROGRAMMING KNOWLEDGE', 12, true);
+            yPos += 3;
+            
+            addText('Learn C/C++:', 10, true);
+            yPos += 2;
+            addBullet('Understanding memory management: pointers, malloc/free, stack vs heap.');
+            addBullet('Buffer overflow concepts - how they work at the assembly level.');
+            addBullet('Write simple exploits to understand low-level vulnerabilities.');
+            yPos += 3;
+            
+            addText('Learn Assembly (x86/x64):', 10, true);
+            yPos += 2;
+            addBullet('Understand registers, instruction sets, calling conventions.');
+            addBullet('Read disassembled code, understand function prologues and epilogues.');
+            addBullet('Essential for reverse engineering and exploit development.');
+            yPos += 3;
+            
+            addText('Web Technologies:', 10, true);
+            yPos += 2;
+            addBullet('HTML/CSS/JavaScript: Understand how web applications are built.');
+            addBullet('PHP/Node.js: Learn common web programming languages to understand vulnerabilities.');
+            addBullet('SQL: Master database queries, understand how injection attacks work.');
+            
+            // Phase 3
+            doc.addPage();
+            yPos = 20;
+            addText('PHASE 3: CORE SECURITY CONCEPTS (2-4 MONTHS)', 16, true, [102, 126, 234]);
+            yPos += 5;
+            
+            addText('3.1 CRYPTOGRAPHY', 12, true);
+            yPos += 3;
+            
+            addText('Cryptographic Fundamentals:', 10, true);
+            yPos += 2;
+            addBullet('Symmetric Encryption: AES, DES, 3DES - understand block ciphers, modes of operation (ECB, CBC, CTR, GCM).');
+            addBullet('Asymmetric Encryption: RSA, ECC - understand public/private key pairs, key exchange protocols.');
+            addBullet('Hashing: MD5, SHA-1, SHA-256, SHA-3 - understand collision resistance, why MD5 and SHA-1 are broken.');
+            addBullet('Digital Signatures: How they provide authentication and integrity.');
+            addBullet('Message Authentication Codes (MAC): HMAC and its uses.');
+            addBullet('Key Derivation Functions: PBKDF2, bcrypt, scrypt, Argon2 - password hashing best practices.');
+            yPos += 3;
+            
+            addText('Advanced Topics:', 10, true);
+            yPos += 2;
+            addBullet('Public Key Infrastructure (PKI): Certificate authorities, chain of trust, certificate validation.');
+            addBullet('SSL/TLS: Handshake process, cipher suites, perfect forward secrecy, common attacks (BEAST, POODLE, Heartbleed).');
+            addBullet('Diffie-Hellman Key Exchange: Understand the math, implement it in code.');
+            addBullet('Cryptographic Attacks: Birthday attacks, padding oracle attacks, timing attacks, side-channel attacks.');
+            yPos += 3;
+            
+            addText('Practical Exercises:', 10, true);
+            yPos += 2;
+            addBullet('Implement basic encryption algorithms from scratch (Caesar cipher, Vigenère, then move to modern algorithms).');
+            addBullet('Break weak encryption - practice cryptanalysis on simple ciphers.');
+            addBullet('Use OpenSSL to generate keys, create certificates, set up encrypted connections.');
+            addBullet('Analyze TLS handshakes in Wireshark, identify cipher suites and protocols used.');
+            yPos += 5;
+            
+            checkPageBreak(30);
+            addText('3.2 COMMON VULNERABILITIES AND EXPLOITS', 12, true);
+            yPos += 3;
+            
+            addText('OWASP Top 10 Web Vulnerabilities:', 10, true);
+            yPos += 2;
+            addBullet('Broken Access Control: IDOR, missing function level access control, privilege escalation.');
+            addBullet('Cryptographic Failures: Weak encryption, hardcoded credentials, insecure key storage.');
+            addBullet('Injection: SQL injection, command injection, LDAP injection, XML injection.');
+            addBullet('Insecure Design: Threat modeling failures, missing security controls.');
+            addBullet('Security Misconfiguration: Default credentials, unnecessary features enabled, verbose error messages.');
+            addBullet('Vulnerable Components: Using libraries with known vulnerabilities.');
+            addBullet('Authentication Failures: Weak passwords, session fixation, broken session management.');
+            addBullet('Data Integrity Failures: Insecure deserialization, tampering.');
+            addBullet('Logging and Monitoring Failures: Insufficient logging, log tampering.');
+            addBullet('Server-Side Request Forgery (SSRF): Forcing server to make unintended requests.');
+            yPos += 3;
+            
+            addText('Additional Critical Vulnerabilities:', 10, true);
+            yPos += 2;
+            addBullet('Cross-Site Scripting (XSS): Reflected, stored, DOM-based XSS. Learn encoding, sanitization.');
+            addBullet('Cross-Site Request Forgery (CSRF): Understand token validation, same-origin policy.');
+            addBullet('XML External Entity (XXE): File disclosure, SSRF via XXE.');
+            addBullet('Remote Code Execution (RCE): Command injection, unsafe deserialization.');
+            addBullet('File Inclusion: LFI and RFI vulnerabilities, path traversal.');
+            addBullet('Buffer Overflow: Stack-based and heap-based overflows.');
+            yPos += 3;
+            
+            addText('Practice Platforms:', 10, true);
+            yPos += 2;
+            addBullet('Set up DVWA (Damn Vulnerable Web Application) and exploit all vulnerabilities at each difficulty level.');
+            addBullet('Complete WebGoat and Web Security Academy by PortSwigger.');
+            addBullet('Work through OWASP Juice Shop challenges.');
+            addBullet('Practice on HackTheBox, TryHackMe, and PentesterLab.');
+            
+            // Phase 4
+            doc.addPage();
+            yPos = 20;
+            addText('PHASE 4: OFFENSIVE SECURITY (4-8 MONTHS)', 16, true, [102, 126, 234]);
+            yPos += 5;
+            
+            addText('4.1 RECONNAISSANCE AND INFORMATION GATHERING', 12, true);
+            yPos += 3;
+            
+            addText('OSINT (Open Source Intelligence):', 10, true);
+            yPos += 2;
+            addBullet('Google Dorking: Master advanced search operators to find sensitive information.');
+            addBullet('Social Media Intelligence: LinkedIn, Twitter, Facebook for employee enumeration.');
+            addBullet('Domain Intelligence: WHOIS lookups, DNS records, historical DNS data.');
+            addBullet('Email Harvesting: theHarvester, hunter.io, phonebook.cz.');
+            addBullet('Document Metadata: Extract EXIF data from images, metadata from PDFs.');
+            yPos += 3;
+            
+            addText('Active Reconnaissance:', 10, true);
+            yPos += 2;
+            addBullet('DNS Enumeration: Zone transfers, subdomain brute-forcing with tools like dnsenum, fierce.');
+            addBullet('Port Scanning: Master Nmap - TCP SYN scan, UDP scan, version detection, OS fingerprinting.');
+            addBullet('Service Enumeration: Banner grabbing, service-specific enumeration (SMB, SNMP, SMTP).');
+            addBullet('Web Application Fingerprinting: Identify technologies used (Wappalyzer, BuiltWith).');
+            yPos += 3;
+            
+            checkPageBreak(30);
+            addText('4.2 VULNERABILITY ASSESSMENT AND SCANNING', 12, true);
+            yPos += 3;
+            
+            addText('Automated Scanning:', 10, true);
+            yPos += 2;
+            addBullet('Nessus: Install, configure, run vulnerability scans, understand scan results.');
+            addBullet('OpenVAS: Open-source alternative to Nessus.');
+            addBullet('Nikto: Web server scanner for misconfigurations and vulnerabilities.');
+            addBullet('SQLMap: Automated SQL injection detection and exploitation.');
+            yPos += 3;
+            
+            addText('Manual Testing:', 10, true);
+            yPos += 2;
+            addBullet('Learn to manually verify scanner findings - many false positives exist.');
+            addBullet('Develop methodology for manual web application testing.');
+            addBullet('Use Burp Suite Professional for manual web application testing.');
+            yPos += 5;
+            
+            addText('4.3 WEB APPLICATION PENETRATION TESTING', 12, true);
+            yPos += 3;
+            
+            addText('Tools to Master:', 10, true);
+            yPos += 2;
+            addBullet('Burp Suite: Proxy, repeater, intruder, scanner, extensions.');
+            addBullet('OWASP ZAP: Alternative to Burp, automated scanning capabilities.');
+            addBullet('Postman: API testing, authentication mechanisms.');
+            addBullet('Browser Developer Tools: Network tab, console, application storage.');
+            yPos += 3;
+            
+            addText('Testing Methodology:', 10, true);
+            yPos += 2;
+            addBullet('Authentication Testing: Password policies, account lockout, password reset, remember me functionality.');
+            addBullet('Session Management: Token strength, timeout, fixation, hijacking vulnerabilities.');
+            addBullet('Input Validation: Test all input fields for injection, XSS, file upload vulnerabilities.');
+            addBullet('Business Logic: Test workflows, payment processes, access controls, privilege escalation.');
+            addBullet('API Testing: REST/SOAP APIs, authentication, rate limiting, mass assignment.');
+            yPos += 3;
+            
+            addText('Practical Exercises:', 10, true);
+            yPos += 2;
+            addBullet('Complete all PortSwigger Web Security Academy labs (free and excellent).');
+            addBullet('Practice on OWASP WebGoat, Juice Shop, and bWAPP.');
+            addBullet('Document your methodology - create your own testing checklist.');
+            yPos += 5;
+            
+            checkPageBreak(30);
+            addText('4.4 NETWORK PENETRATION TESTING', 12, true);
+            yPos += 3;
+            
+            addText('Internal Network Attacks:', 10, true);
+            yPos += 2;
+            addBullet('ARP Spoofing: Perform man-in-the-middle attacks with Ettercap or Bettercap.');
+            addBullet('LLMNR/NBT-NS Poisoning: Capture credentials with Responder.');
+            addBullet('SMB Relay Attacks: Relay authentication to other systems.');
+            addBullet('VLAN Hopping: Exploit switch misconfigurations.');
+            yPos += 3;
+            
+            addText('Windows Active Directory Attacks:', 10, true);
+            yPos += 2;
+            addBullet('Kerberoasting: Extract service account credentials.');
+            addBullet('AS-REP Roasting: Attack accounts without pre-authentication.');
+            addBullet('Pass-the-Hash: Use NTLM hashes without cracking.');
+            addBullet('Pass-the-Ticket: Kerberos ticket manipulation.');
+            addBullet('BloodHound: Map AD attack paths, find privilege escalation routes.');
+            addBullet('Mimikatz: Credential dumping, golden/silver ticket attacks.');
+            yPos += 3;
+            
+            addText('Password Attacks:', 10, true);
+            yPos += 2;
+            addBullet('Hashcat: GPU-based password cracking, understand attack modes.');
+            addBullet('John the Ripper: Multi-platform password cracker.');
+            addBullet('Hydra: Network login bruteforcing (SSH, FTP, HTTP).');
+            addBullet('CeWL: Generate custom wordlists from target websites.');
+            addBullet('Understand rainbow tables, dictionary attacks, hybrid attacks, mask attacks.');
+            yPos += 3;
+            
+            addText('Post-Exploitation:', 10, true);
+            yPos += 2;
+            addBullet('Metasploit Framework: Exploitation, payloads, post-exploitation modules.');
+            addBullet('Privilege Escalation: Linux (SUID binaries, cron jobs, kernel exploits) and Windows (unquoted service paths, DLL hijacking, registry keys).');
+            addBullet('Lateral Movement: PSExec, WMI, DCOM, SSH tunneling.');
+            addBullet('Persistence Mechanisms: Backdoors, scheduled tasks, startup items.');
+            addBullet('Data Exfiltration: Covert channels, DNS tunneling, steganography.');
+            yPos += 3;
+            
+            addText('Lab Setup:', 10, true);
+            yPos += 2;
+            addBullet('Build a vulnerable AD lab with multiple Windows machines and a domain controller.');
+            addBullet('Practice attacks in isolated environment - never on systems you do not own.');
+            addBullet('Join HackTheBox VIP or TryHackMe and complete all AD rooms.');
+            
+            // Phase 5
+            doc.addPage();
+            yPos = 20;
+            addText('PHASE 5: DEFENSIVE SECURITY (4-8 MONTHS)', 16, true, [102, 126, 234]);
+            yPos += 5;
+            
+            addText('5.1 SYSTEM HARDENING', 12, true);
+            yPos += 3;
+            
+            addText('Linux Hardening:', 10, true);
+            yPos += 2;
+            addBullet('Disable unnecessary services and remove unused packages.');
+            addBullet('Configure firewall rules (iptables/nftables) - deny by default, allow explicitly.');
+            addBullet('Implement SELinux or AppArmor for mandatory access control.');
+            addBullet('Configure secure SSH: disable root login, use key authentication, change default port.');
+            addBullet('Set password policies: complexity, expiration, history.');
+            addBullet('Enable audit logging with auditd, monitor critical files.');
+            addBullet('Implement file integrity monitoring (AIDE, Tripwire).');
+            addBullet('Configure automatic security updates.');
+            yPos += 3;
+            
+            addText('Windows Hardening:', 10, true);
+            yPos += 2;
+            addBullet('Apply Group Policy security templates, implement CIS benchmarks.');
+            addBullet('Configure Windows Firewall with advanced security.');
+            addBullet('Enable and configure AppLocker or Windows Defender Application Control.');
+            addBullet('Implement LAPS for local admin password management.');
+            addBullet('Disable SMBv1, enable SMB signing and encryption.');
+            addBullet('Configure PowerShell logging and script block logging.');
+            addBullet('Implement Credential Guard and Device Guard.');
+            yPos += 3;
+            
+            addText('Network Hardening:', 10, true);
+            yPos += 2;
+            addBullet('Implement network segmentation with VLANs and firewall rules.');
+            addBullet('Deploy jump boxes/bastion hosts for administrative access.');
+            addBullet('Configure 802.1X for network access control.');
+            addBullet('Implement port security on switches.');
+            addBullet('Disable unused network services and protocols.');
+            yPos += 5;
+            
+            checkPageBreak(30);
+            addText('5.2 SECURITY MONITORING AND SIEM', 12, true);
+            yPos += 3;
+            
+            addText('Log Management:', 10, true);
+            yPos += 2;
+            addBullet('Centralize logs from all systems to a SIEM platform.');
+            addBullet('Understand different log types: authentication, system, application, security logs.');
+            addBullet('Configure log retention policies based on compliance requirements.');
+            addBullet('Protect log integrity - prevent tampering and deletion.');
+            yPos += 3;
+            
+            addText('SIEM Implementation:', 10, true);
+            yPos += 2;
+            addBullet('Set up ELK Stack (Elasticsearch, Logstash, Kibana) in your lab.');
+            addBullet('Configure Splunk (free version available) or Wazuh (open-source).');
+            addBullet('Create data inputs from multiple sources (Windows, Linux, network devices).');
+            addBullet('Develop correlation rules to detect attacks: brute force, privilege escalation, lateral movement.');
+            addBullet('Create dashboards for security monitoring and reporting.');
+            addBullet('Set up alerting mechanisms for critical events.');
+            yPos += 3;
+            
+            addText('Detection Rules and Use Cases:', 10, true);
+            yPos += 2;
+            addBullet('Multiple failed login attempts from single source.');
+            addBullet('Successful login from unusual location or time.');
+            addBullet('Account lockouts and password resets.');
+            addBullet('Service creation or modification on critical systems.');
+            addBullet('Execution of PowerShell with encoded commands.');
+            addBullet('Unusual network connections or data transfers.');
+            addBullet('Privilege escalation indicators.');
+            yPos += 5;
+            
+            checkPageBreak(30);
+            addText('5.3 INTRUSION DETECTION AND PREVENTION', 12, true);
+            yPos += 3;
+            
+            addText('Network IDS/IPS:', 10, true);
+            yPos += 2;
+            addBullet('Install and configure Snort or Suricata.');
+            addBullet('Understand rule syntax and structure.');
+            addBullet('Write custom signatures for detecting specific attacks.');
+            addBullet('Tune rules to minimize false positives.');
+            addBullet('Integrate with SIEM for centralized alerting.');
+            yPos += 3;
+            
+            addText('Host-based Detection:', 10, true);
+            yPos += 2;
+            addBullet('Deploy OSSEC or Wazuh agents on endpoints.');
+            addBullet('Configure file integrity monitoring.');
+            addBullet('Set up rootkit detection.');
+            addBullet('Monitor for suspicious process execution.');
+            yPos += 5;
+            
+            addText('5.4 INCIDENT RESPONSE', 12, true);
+            yPos += 3;
+            
+            addText('IR Methodology (NIST Framework):', 10, true);
+            yPos += 2;
+            addBullet('Preparation: Develop IR plan, create playbooks, establish communication channels.');
+            addBullet('Detection and Analysis: Identify incidents, determine scope and severity.');
+            addBullet('Containment: Short-term (isolate affected systems) and long-term containment.');
+            addBullet('Eradication: Remove malware, close vulnerabilities, eliminate attacker access.');
+            addBullet('Recovery: Restore systems to normal operation, verify systems are clean.');
+            addBullet('Post-Incident: Lessons learned, update procedures, improve defenses.');
+            yPos += 3;
+            
+            addText('Digital Forensics:', 10, true);
+            yPos += 2;
+            addBullet('Disk Forensics: Use Autopsy or FTK Imager for disk analysis.');
+            addBullet('Memory Forensics: Volatility framework for analyzing RAM dumps.');
+            addBullet('Network Forensics: PCAP analysis, network traffic reconstruction.');
+            addBullet('Timeline Analysis: Correlate events across multiple systems.');
+            addBullet('Chain of Custody: Proper evidence handling and documentation.');
+            yPos += 3;
+            
+            addText('Malware Analysis:', 10, true);
+            yPos += 2;
+            addBullet('Static Analysis: Strings extraction, PE header analysis, signature detection.');
+            addBullet('Dynamic Analysis: Sandbox execution (Cuckoo, Any.run), behavior monitoring.');
+            addBullet('Code Analysis: IDA Pro, Ghidra for disassembly and reverse engineering.');
+            addBullet('Set up isolated malware analysis lab - never analyze on production systems.');
+            yPos += 3;
+            
+            addText('Practical Exercises:', 10, true);
+            yPos += 2;
+            addBullet('Create incident response playbooks for common scenarios (ransomware, data breach, DDoS).');
+            addBullet('Practice forensics on CTF challenges and forensics datasets.');
+            addBullet('Analyze malware samples from public repositories (VirusTotal, MalwareBazaar).');
+            
+            // Phase 6
+            doc.addPage();
+            yPos = 20;
+            addText('PHASE 6: ADVANCED SPECIALIZATIONS (6-12 MONTHS)', 16, true, [102, 126, 234]);
+            yPos += 5;
+            
+            addText('6.1 REVERSE ENGINEERING', 12, true);
+            yPos += 3;
+            
+            addText('Assembly Language:', 10, true);
+            yPos += 2;
+            addBullet('Master x86 and x64 assembly instruction sets.');
+            addBullet('Understand registers (RAX, RBX, RCX, RDX, RSP, RBP, etc.).');
+            addBullet('Learn calling conventions (cdecl, stdcall, fastcall).');
+            addBullet('Stack operations: push, pop, function prologues/epilogues.');
+            addBullet('Control flow: jumps, calls, conditional jumps.');
+            yPos += 3;
+            
+            addText('Debugging and Disassembly:', 10, true);
+            yPos += 2;
+            addBullet('GDB (Linux): Set breakpoints, step through code, examine registers and memory.');
+            addBullet('x64dbg/x32dbg (Windows): Dynamic analysis, plugin system.');
+            addBullet('OllyDbg: Classic Windows debugger.');
+            addBullet('WinDbg: Advanced Windows debugging, kernel debugging.');
+            yPos += 3;
+            
+            addText('Disassemblers and Decompilers:', 10, true);
+            yPos += 2;
+            addBullet('IDA Pro: Industry standard, powerful scripting with IDAPython.');
+            addBullet('Ghidra: NSA tool, free alternative to IDA, decompiler included.');
+            addBullet('Binary Ninja: Modern interface, intermediate language representation.');
+            addBullet('Radare2: Open-source, powerful CLI-based framework.');
+            yPos += 3;
+            
+            addText('Practice Projects:', 10, true);
+            yPos += 2;
+            addBullet('Start with crackmes from crackmes.one - begin with easy, progress to hard.');
+            addBullet('Reverse engineer keygen algorithms.');
+            addBullet('Analyze malware samples to understand behavior and capabilities.');
+            addBullet('Participate in reverse engineering CTFs.');
+            yPos += 5;
+            
+            checkPageBreak(30);
+            addText('6.2 EXPLOIT DEVELOPMENT', 12, true);
+            yPos += 3;
+            
+            addText('Memory Corruption Vulnerabilities:', 10, true);
+            yPos += 2;
+            addBullet('Stack-based Buffer Overflows: Overwrite return addresses, execute shellcode.');
+            addBullet('Heap Exploitation: Use-after-free, heap spraying, heap overflow.');
+            addBullet('Format String Vulnerabilities: Read/write arbitrary memory.');
+            addBullet('Integer Overflows: Cause unexpected behavior in calculations.');
+            yPos += 3;
+            
+            addText('Exploit Mitigation Bypass:', 10, true);
+            yPos += 2;
+            addBullet('DEP/NX Bypass: Return-oriented programming (ROP), return-to-libc.');
+            addBullet('ASLR Bypass: Information leaks, brute force, partial overwrites.');
+            addBullet('Stack Canaries: Leak canary values, overwrite with correct values.');
+            addBullet('CFI/CET: Control-flow integrity bypass techniques.');
+            yPos += 3;
+            
+            addText('Shellcoding:', 10, true);
+            yPos += 2;
+            addBullet('Write position-independent shellcode in assembly.');
+            addBullet('Avoid null bytes and bad characters.');
+            addBullet('Encode shellcode to bypass filters (XOR encoding, alphanumeric shellcode).');
+            yPos += 3;
+            
+            addText('Resources and Practice:', 10, true);
+            yPos += 2;
+            addBullet('Complete Exploit Education challenges (Phoenix, Nebula, Fusion).');
+            addBullet('Work through "The Shellcoder\'s Handbook" and "Hacking: The Art of Exploitation".');
+            addBullet('Practice on pwnable.kr, pwnable.tw, and ROP Emporium.');
+            yPos += 5;
+            
+            checkPageBreak(30);
+            addText('6.3 CLOUD SECURITY', 12, true);
+            yPos += 3;
+            
+            addText('AWS Security:', 10, true);
+            yPos += 2;
+            addBullet('IAM: Policies, roles, users, groups, least privilege principle.');
+            addBullet('S3 Security: Bucket policies, ACLs, encryption, versioning.');
+            addBullet('VPC: Security groups, NACLs, VPN, Direct Connect.');
+            addBullet('CloudTrail: Audit logging and monitoring.');
+            addBullet('GuardDuty: Threat detection service.');
+            addBullet('Common misconfigurations: Public S3 buckets, overly permissive IAM, exposed databases.');
+            yPos += 3;
+            
+            addText('Azure Security:', 10, true);
+            yPos += 2;
+            addBullet('Azure AD: Identity management, conditional access.');
+            addBullet('RBAC: Role-based access control implementation.');
+            addBullet('Azure Security Center: Recommendations and threat protection.');
+            addBullet('Key Vault: Secrets management.');
+            yPos += 3;
+            
+            addText('Container Security:', 10, true);
+            yPos += 2;
+            addBullet('Docker: Image vulnerabilities, escape techniques, daemon security.');
+            addBullet('Kubernetes: Pod security policies, network policies, RBAC.');
+            addBullet('Container scanning: Trivy, Clair, Anchore.');
+            yPos += 3;
+            
+            addText('Practice:', 10, true);
+            yPos += 2;
+            addBullet('Complete flAWS and flAWS2 challenges for AWS security.');
+            addBullet('Set up intentionally vulnerable cloud environments (CloudGoat, Terraform Goat).');
+            addBullet('Practice with cloud CTFs and challenges.');
+            yPos += 5;
+            
+            checkPageBreak(30);
+            addText('6.4 WIRELESS SECURITY', 12, true);
+            yPos += 3;
+            
+            addText('Wi-Fi Security:', 10, true);
+            yPos += 2;
+            addBullet('Understand WEP, WPA, WPA2, WPA3 protocols and their vulnerabilities.');
+            addBullet('Evil Twin Attacks: Create rogue access points.');
+            addBullet('Deauthentication Attacks: Force clients to disconnect.');
+            addBullet('WPA2 Handshake Capture: Crack with Hashcat or Aircrack-ng.');
+            addBullet('WPS PIN Attacks: Reaver, Pixie Dust attack.');
+            yPos += 3;
+            
+            addText('Tools:', 10, true);
+            yPos += 2;
+            addBullet('Aircrack-ng Suite: Monitoring, packet capture, cracking.');
+            addBullet('Wifite: Automated wireless auditing.');
+            addBullet('WiFi Pineapple: Hardware platform for wireless testing.');
+            yPos += 3;
+            
+            addText('Bluetooth and RF:', 10, true);
+            yPos += 2;
+            addBullet('Bluetooth LE attacks: Sniffing, spoofing, relay attacks.');
+            addBullet('RFID/NFC: Cloning, relay attacks.');
+            addBullet('SDR (Software Defined Radio): Analyze and transmit on various frequencies.');
+            
+            // Phase 7
+            doc.addPage();
+            yPos = 20;
+            addText('PHASE 7: RED TEAM OPERATIONS (6-12 MONTHS)', 16, true, [102, 126, 234]);
+            yPos += 5;
+            
+            addText('7.1 ADVERSARY EMULATION', 12, true);
+            yPos += 3;
+            
+            addText('Threat Intelligence:', 10, true);
+            yPos += 2;
+            addBullet('Study MITRE ATT&CK framework - understand tactics, techniques, procedures.');
+            addBullet('Research APT groups and their methodologies.');
+            addBullet('Develop threat profiles based on industry and geographic region.');
+            yPos += 3;
+            
+            addText('Command and Control (C2):', 10, true);
+            yPos += 2;
+            addBullet('Cobalt Strike: Commercial C2 framework, beacons, malleable profiles.');
+            addBullet('Empire/Starkiller: PowerShell post-exploitation framework.');
+            addBullet('Covenant: .NET C2 framework.');
+            addBullet('Sliver: Open-source alternative to Cobalt Strike.');
+            addBullet('Custom C2: Build your own using HTTP/HTTPS, DNS tunneling.');
+            yPos += 3;
+            
+            addText('Evasion Techniques:', 10, true);
+            yPos += 2;
+            addBullet('AV/EDR Bypass: Obfuscation, encryption, process injection, living off the land.');
+            addBullet('AMSI Bypass: Techniques to evade Windows Anti-Malware Scan Interface.');
+            addBullet('Signature Evasion: Modify exploits and payloads to avoid detection.');
+            addBullet('Behavioral Evasion: Sandbox detection, time-based execution, environmental keying.');
+            yPos += 3;
+            
+            checkPageBreak(30);
+            addText('7.2 PERSISTENCE AND LATERAL MOVEMENT', 12, true);
+            yPos += 3;
+            
+            addText('Persistence Mechanisms:', 10, true);
+            yPos += 2;
+            addBullet('Registry Run Keys: Startup execution.');
+            addBullet('Scheduled Tasks: Periodic or event-triggered execution.');
+            addBullet('Services: Create malicious services.');
+            addBullet('WMI Event Subscriptions: Fileless persistence.');
+            addBullet('DLL Hijacking: Load malicious DLLs.');
+            addBullet('Golden/Silver Tickets: Kerberos ticket manipulation for long-term access.');
+            yPos += 3;
+            
+            addText('Lateral Movement:', 10, true);
+            yPos += 2;
+            addBullet('PsExec: Remote execution via SMB.');
+            addBullet('WMI: Remote command execution.');
+            addBullet('DCOM: Distributed COM for lateral movement.');
+            addBullet('RDP: Remote desktop access.');
+            addBullet('Pass-the-Hash/Ticket: Move without passwords.');
+            addBullet('SSH Tunneling: Pivot through compromised Linux systems.');
+            yPos += 3;
+            
+            addText('7.3 PHYSICAL SECURITY', 12, true);
+            yPos += 3;
+            
+            addText('Skills to Develop:', 10, true);
+            yPos += 2;
+            addBullet('Lock Picking: Learn pin tumbler locks, practice on progressively harder locks.');
+            addBullet('Badge Cloning: RFID/NFC badge duplication.');
+            addBullet('Tailgating: Social engineering for physical access.');
+            addBullet('USB Drop Attacks: Rubber Ducky, Bash Bunny for payload delivery.');
+            addBullet('Raspberry Pi: Deploy hidden devices for network access.');
+            
+            // Phase 8
+            doc.addPage();
+            yPos = 20;
+            addText('PHASE 8: CONTINUOUS LEARNING AND CERTIFICATION (ONGOING)', 16, true, [102, 126, 234]);
+            yPos += 5;
+            
+            addText('8.1 RECOMMENDED CERTIFICATIONS', 12, true);
+            yPos += 3;
+            
+            addText('Entry/Intermediate:', 10, true);
+            yPos += 2;
+            addBullet('CompTIA Security+: Foundation security knowledge.');
+            addBullet('eJPT (eLearnSecurity Junior Penetration Tester): Practical pentesting.');
+            addBullet('CEH (Certified Ethical Hacker): Broad coverage of hacking tools.');
+            yPos += 3;
+            
+            addText('Advanced:', 10, true);
+            yPos += 2;
+            addBullet('OSCP (Offensive Security Certified Professional): Highly practical, hands-on exam.');
+            addBullet('OSEP (Offensive Security Experienced Penetration Tester): Advanced evasion.');
+            addBullet('OSWE (Offensive Security Web Expert): Advanced web exploitation.');
+            addBullet('eCPPT (eLearnSecurity Certified Professional Penetration Tester): Network pentesting.');
+            yPos += 3;
+            
+            addText('Expert:', 10, true);
+            yPos += 2;
+            addBullet('OSCE3 (Offensive Security Certified Expert): Combination of OSEP, OSWE, OSED.');
+            addBullet('GXPN (GIAC Exploit Researcher and Advanced Penetration Tester): Exploit development.');
+            addBullet('GREM (GIAC Reverse Engineering Malware): Malware analysis and RE.');
+            yPos += 3;
+            
+            addText('Defensive:', 10, true);
+            yPos += 2;
+            addBullet('GCIH (GIAC Certified Incident Handler): Incident response.');
+            addBullet('GCFA (GIAC Certified Forensic Analyst): Digital forensics.');
+            addBullet('GCIA (GIAC Certified Intrusion Analyst): Network traffic analysis.');
+            yPos += 5;
+            
+            checkPageBreak(30);
+            addText('8.2 STAYING CURRENT', 12, true);
+            yPos += 3;
+            
+            addText('Information Sources:', 10, true);
+            yPos += 2;
+            addBullet('RSS Feeds: Follow security blogs (Krebs on Security, Schneier on Security).');
+            addBullet('Twitter/X: Follow researchers, @CVEnew, @threatpost, security vendors.');
+            addBullet('Reddit: r/netsec, r/cybersecurity, r/AskNetsec.');
+            addBullet('Podcasts: Darknet Diaries, Security Now, Risky Business.');
+            addBullet('Conferences: DEF CON, Black Hat, BSides (watch recorded talks).');
+            yPos += 3;
+            
+            addText('Vulnerability Research:', 10, true);
+            yPos += 2;
+            addBullet('CVE Details: Track new vulnerabilities.');
+            addBullet('Exploit-DB: Public exploit database.');
+            addBullet('GitHub: Security tool development, PoC exploits.');
+            addBullet('Bug Bounty Platforms: HackerOne, Bugcrowd writeups.');
+            yPos += 3;
+            
+            addText('8.3 GIVING BACK TO THE COMMUNITY', 12, true);
+            yPos += 3;
+            
+            addBullet('Write blog posts and walkthroughs documenting your learning.');
+            addBullet('Contribute to open-source security tools.');
+            addBullet('Mentor others in the community.');
+            addBullet('Present at local security meetups or BSides conferences.');
+            addBullet('Participate in bug bounty programs - ethical hacking with permission.');
+            yPos += 10;
+            
+            // Additional Resources
+            checkPageBreak(40);
+            addText('RECOMMENDED BOOKS', 14, true, [102, 126, 234]);
+            yPos += 5;
+            
+            addText('Fundamental:', 10, true);
+            yPos += 2;
+            addBullet('The Web Application Hacker\'s Handbook - Stuttard & Pinto');
+            addBullet('Hacking: The Art of Exploitation - Jon Erickson');
+            addBullet('The Shellcoder\'s Handbook - Koziol et al.');
+            addBullet('Metasploit: The Penetration Tester\'s Guide - Kennedy et al.');
+            yPos += 3;
+            
+            addText('Advanced:', 10, true);
+            yPos += 2;
+            addBullet('Practical Malware Analysis - Sikorski & Honig');
+            addBullet('The IDA Pro Book - Eagle');
+            addBullet('Reversing: Secrets of Reverse Engineering - Eilam');
+            addBullet('Gray Hat Hacking - Harris et al.');
+            yPos += 3;
+            
+            addText('Network Security:', 10, true);
+            yPos += 2;
+            addBullet('TCP/IP Illustrated - Stevens');
+            addBullet('Network Security Assessment - McNab');
+            addBullet('Applied Network Security Monitoring - Sanders et al.');
+            yPos += 10;
+            
+            checkPageBreak(40);
+            addText('PRACTICE PLATFORMS', 14, true, [102, 126, 234]);
+            yPos += 5;
+            
+            addText('Hands-On Labs:', 10, true);
+            yPos += 2;
+            addBullet('HackTheBox: Extensive labs, retired machines with walkthroughs.');
+            addBullet('TryHackMe: Guided learning paths, beginner-friendly.');
+            addBullet('PentesterLab: Web application security focus.');
+            addBullet('PortSwigger Web Security Academy: Excellent free web security labs.');
+            addBullet('VulnHub: Download vulnerable VMs for offline practice.');
+            yPos += 3;
+            
+            addText('CTF Platforms:', 10, true);
+            yPos += 2;
+            addBullet('picoCTF: Beginner-friendly CTF.');
+            addBullet('CTFtime: Calendar of upcoming CTF competitions.');
+            addBullet('OverTheWire: Wargames for learning security concepts.');
+            yPos += 3;
+            
+            addText('Bug Bounty:', 10, true);
+            yPos += 2;
+            addBullet('HackerOne: Public and private programs.');
+            addBullet('Bugcrowd: Wide variety of programs.');
+            addBullet('YesWeHack: European focus.');
+            yPos += 10;
+            
+            checkPageBreak(40);
+            addText('FINAL THOUGHTS', 14, true, [102, 126, 234]);
+            yPos += 5;
+            
+            addText('This roadmap is comprehensive but not exhaustive. Cybersecurity is vast, and you should focus on areas that interest you most while maintaining a broad foundation. The key principles for success:', 10);
+            yPos += 5;
+            
+            addBullet('Practice constantly - reading alone won\'t make you skilled.');
+            addBullet('Document everything - create your own notes and methodology.');
+            addBullet('Stay curious - always ask "why" and "how" things work.');
+            addBullet('Be ethical - only test systems you own or have permission to test.');
+            addBullet('Join communities - learn from others, share knowledge.');
+            addBullet('Think like both attacker and defender - understand both perspectives.');
+            addBullet('Accept that learning never stops - the field constantly evolves.');
+            yPos += 10;
+            
+            addText('Remember: True expertise comes from depth of understanding, not just breadth of knowledge. Take your time with each phase, ensure you truly understand concepts before moving on, and always prioritize hands-on practice over passive learning.', 10);
+            yPos += 10;
+            
+            doc.setFontSize(10);
+            doc.setFont(undefined, 'italic');
+            doc.setTextColor(100, 100, 100);
+            doc.text('Good luck on your journey to cybersecurity mastery!', margin, yPos);
+            
+            // Save PDF
+            doc.save('Cybersecurity_Mastery_Roadmap.pdf');
+            
+            loading.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
